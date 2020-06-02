@@ -1,24 +1,7 @@
 <?php
 $page = 'dashboard';
 require_once "../Site/header.php";
-if( $user->adm >= 1)
-{
 
-}else{
-  echo "   <div class='card shadow mb-4'>
-            <div class='card-header py-3'>
-              <h1 class='m-0 font-weight-bold text-primary'>YETERSİZ YETKI</h1></div></div>
-              <div class='card shadow mb-4'>
-                <div class='card-header py-3'>
-              <h1 class='m-0 font-weight-bold text-primary'>YETERSİZ YETKI</h1></div></div>
-                <div class='card shadow mb-4'>
-                <div class='card-header py-3'>
-              <h1 class='m-0 font-weight-bold text-primary'>YETERSİZ YETKI</h1></div></div>
-                   <div class='card shadow mb-4'>
-                <div class='card-header py-3'>
-              <h1 class='m-0 font-weight-bold text-primary'>YETERSİZ YETKI</h1></div></div>";
-exit();
-}
 ?>
         <!-- End of Topbar -->
 
