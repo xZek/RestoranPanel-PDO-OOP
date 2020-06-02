@@ -87,23 +87,20 @@ public function ListMakeUser()
       }
 }
 /* Düzenlenen kullanıcı ismini update eder */
-   public function ChangeUsername($ownID, $ownName)
+   public function ChangeUsername($userID, $username, $ownID, $ownName)
    {
 
      $db =  DB();
 
 
-       $user_id = $_POST['id'];
-       $username = $_POST['username'];
 
 
-
-      $update = "UPDATE users SET username = '" . $username . "'  WHERE user_id=" . $user_id;
+      $update = "UPDATE users SET username = '" . $username . "'  WHERE user_id=" . $userID;
       $done =  $db->query($update);
       if($done)
       {
         // OTOMATIK LOG INPUTU
-        $Proccess =  'ID : '. $user_id .  ' - Ad : '. $username.' -  Kullanıcının  ad  değişikliği';
+        $Proccess =  'ID : '. $userID .  ' - Ad : '. $username.' -  Kullanıcının  ad  değişikliği';
 
                   //BURADA LOG EKLIYORUZ
                 $query = $db->prepare("INSERT INTO activity_log(userID,procces, who_didthis) VALUES (:userID, :procces, :who_didthis)");
@@ -120,26 +117,22 @@ public function ListMakeUser()
    }
 
    /* Düzenlenen kullanıcı adı ve şifre girili ise update eder */
-      public function ChangeAll($ownID, $ownName)
+      public function ChangeAll($userID, $username, $password, $ownID, $ownName)
       {
 
         $db =  DB();
 
-
-          $user_id = $_POST['id'];
-          $username = $_POST['username'];
-          $password = $_POST['password'];
           $enc_password = hash('sha256', $password);
 
 
 
 
-         $update = "UPDATE users SET username = '" . $username . "' , password='" . $enc_password . "' WHERE user_id=" . $user_id;
+         $update = "UPDATE users SET username = '" . $username . "' , password='" . $enc_password . "' WHERE user_id=" . $userID;
          $done =  $db->query($update);
          if($done)
          {
            // OTOMATIK LOG INPUTU
-           $Proccess =  'ID : '. $user_id .  ' - Ad : '. $username.' -  Kullanıcının  ad ve şifre değişikliği';
+           $Proccess =  'ID : '. $userID .  ' - Ad : '. $username.' -  Kullanıcının  ad ve şifre değişikliği';
 
                      //BURADA LOG EKLIYORUZ
                    $query = $db->prepare("INSERT INTO activity_log(userID,procces, who_didthis) VALUES (:userID, :procces, :who_didthis)");
