@@ -41,18 +41,7 @@ require "../POST/Urun_IcerikEkle.php";
           <center>
             <select name="urunKategoriID">
               <option value="">Seciniz</option>
-              <option value="1">Burger Wrap -Başlangıç</option>
-              <option value="2">Hanmade</option>
-              <option value="3">Burger Express  Menüleri</option>
-              <option value="4">New Menü</option>
-              <option value="5">Kahvaltı Menüsü</option>
-              <option value="6">Express Menüsü</option>
-              <option value="7">Başlangıçlar</option>
-              <option value="8">Tavuk Menüsü</option>
-              <option value="9">SALATALAR</option>
-              <option value="10">TATLILAR</option>
-              <option value="11">MEŞRUBATLAR</option>
-              <option value="12">SICAK İÇECEKLER</option>
+                <?php  echo $Urun->Get_Category(); ?>
             </select>
           </div>
         <button class='btn btn-success'  name='icerik_ekle' type='submit'><i class='fas fa-save'></i> İÇERİK EKLE</button>
