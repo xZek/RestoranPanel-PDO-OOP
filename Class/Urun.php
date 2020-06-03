@@ -28,7 +28,7 @@ class Urun
         }
   }
 
-     //Kullanıcı Düzenleme Ekranındaki Kullanıcıları getirir
+     //İçerikleri Listeler
 
      public function List_Content()
      {
